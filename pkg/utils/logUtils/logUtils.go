@@ -23,7 +23,7 @@ var (
 func InitLog() {
 
 	if LogTarget != LogTargetStd && !fileUtils.FileExists(LogPath) {
-		err := os.Mkdir(LogPath, 0777)
+		err := os.Mkdir(LogPath, 0755)
 		if err != nil {
 			panic("create log dir error")
 		}
@@ -81,6 +81,9 @@ func InitLog() {
 
 	switch LogLevel {
 	default:
+	case LogLevelTraceName:
+		log.SetLevel(LogLevelTrace)
+		break
 	case LogLevelInfoName:
 		log.SetLevel(LogLevelInfo)
 		break
