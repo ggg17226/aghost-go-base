@@ -20,6 +20,3 @@ vendor/
 # jetbrains files
 **/.idea
 **/**.iml
-
-# go mod sum
-**/go.sum
