@@ -51,7 +51,10 @@ func initLogConfigKeyList() {
 		[]string{logUtils.LogTargetKey, logUtils.LogTargetEnvKey},
 		[]string{logUtils.LogLevelKey, logUtils.LogLevelEnvKey},
 		[]string{logUtils.LogFilenameKey, logUtils.LogFilenameEnvKey},
-		[]string{logUtils.LogFormatKey, logUtils.LogFormatEnvKey})
+		[]string{logUtils.LogFormatKey, logUtils.LogFormatEnvKey},
+		[]string{logUtils.LogMaxAgeKey, logUtils.LogMaxAgeEnvKey},
+		[]string{logUtils.LogMaxCountKey, logUtils.LogMaxCountEnvKey},
+	)
 }
 
 // 添加默认的配置文件路径
@@ -115,6 +118,9 @@ func initLog() {
 	logUtils.LogLevel = viper.GetString(logUtils.LogLevelKey)
 	logUtils.LogFilename = viper.GetString(logUtils.LogFilenameKey)
 	logUtils.LogFormat = viper.GetString(logUtils.LogFormatKey)
+
+	logUtils.LogMaxAge = viper.GetDuration(logUtils.LogMaxAgeKey)
+	logUtils.LogMaxCount = viper.GetInt(logUtils.LogMaxCountKey)
 
 	logUtils.InitLog()
 }

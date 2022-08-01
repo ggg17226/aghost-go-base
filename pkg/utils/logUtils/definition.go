@@ -15,6 +15,10 @@ const (
 	LogFilenameKey    = "app.log.filename"
 	LogFormatEnvKey   = "app_log_format"
 	LogFormatKey      = "app.log.format"
+	LogMaxAgeEnvKey   = "app_log_max_age"
+	LogMaxAgeKey      = "app.log.max.age"
+	LogMaxCountEnvKey = "app_log_max_count"
+	LogMaxCountKey    = "app.log.max.count"
 
 	// 定义日志输出格式
 
