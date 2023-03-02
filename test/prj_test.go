@@ -33,4 +33,17 @@ func TestRandomStr(t *testing.T) {
 	if len(randomUtils.RandStringWithLength(testRandomStrLength)) != testRandomStrLength {
 		t.Fatalf("test failed with get random string")
 	}
+
+	randString3 := randomUtils.RandReadableString()
+	if len(randString3) != randomUtils.DefaultLength {
+		t.Fatalf("test failed with get default length random string")
+	}
+	randString4 := randomUtils.RandReadableString()
+	if randString3 == randString4 {
+		t.Fatalf("test failed with get same random string")
+	}
+	if len(randomUtils.RandReadableStringWithLength(testRandomStrLength)) != testRandomStrLength {
+		t.Fatalf("test failed with get random string")
+	}
+
 }
