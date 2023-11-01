@@ -43,3 +43,12 @@ func randomWithLength(n int, characterSet string) string {
 	}
 	return string(b)
 }
+
+func RandNumericalStringWithLength(_length int) string {
+	const charset = "0123456789"
+	result := make([]byte, _length)
+	for i := 0; i < _length; i++ {
+		result[i] = charset[rand.Intn(len(charset))]
+	}
+	return string(result)
+}
